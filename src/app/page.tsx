@@ -31,31 +31,28 @@ export default function Home() {
   };
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1>Pokedex</h1>
+    <div className="bg-red-400 min-h-screen flex flex-col items-center justify-center p-6">
+      <h1 className="text-3xl font-bold mb-6 text-white">Pokédex</h1>
 
-      <input
-        type="text"
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-        placeholder="Ask something about Pokémon..."
-        style={{ padding: "0.5rem", width: "300px", marginRight: "0.5rem" }}
-      />
+      <div className="flex gap-2 mb-4">
+        <input
+          type="text"
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          placeholder="Ask something about Pokémon..."
+          className=" bg-white px-4 py-2 w-72 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500"
+        />
 
-      <button onClick={handleAsk} style={{ padding: "0.5rem 1rem" }}>
-        {loading ? "Loading..." : "Ask"}
-      </button>
+        <button
+          onClick={handleAsk}
+          className="px-4 py-2 bg-white text-red-600 font-semibold rounded-lg shadow hover:bg-red-50 transition"
+        >
+          {loading ? "Loading..." : "Ask"}
+        </button>
+      </div>
 
       {response && (
-        <div
-          style={{
-            marginTop: "1rem",
-            padding: "1rem",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-            maxWidth: "600px",
-          }}
-        >
+        <div className="mt-4 p-4 bg-white rounded-lg shadow-md max-w-xl text-gray-800">
           {response}
         </div>
       )}
