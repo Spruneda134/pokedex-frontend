@@ -31,10 +31,10 @@ export default function Pokedex() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-700 to-red-900 flex flex-col items-center justify-center p-6 relative overflow-hidden">
-      {/* Metallic reflection overlay */}
+      {/* Metallic overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-red-800/60 via-transparent to-red-600/40 pointer-events-none" />
 
-      {/* Top blinking lights */}
+      {/* Top lights */}
       <div className="absolute top-6 left-8 flex gap-3">
         <motion.div
           animate={{ opacity: [1, 0.3, 1] }}
@@ -46,9 +46,9 @@ export default function Pokedex() {
       </div>
 
       {/* Pokédex body */}
-      <div className="bg-red-700 border-8 border-red-900 rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden w-full max-w-3xl mx-auto h-auto">
-        {/* Left panel */}
-        <div className="bg-red-800 flex-1 p-6 relative flex flex-col justify-center border-b-8 md:border-b-0 md:border-r-8 border-red-900">
+      <div className="bg-red-700 border-8 border-red-900 rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden max-w-5xl w-full">
+        {/* Left */}
+        <div className="bg-red-800 flex-1 p-6 relative flex flex-col justify-center border-r-8 border-red-900">
           <div className="text-white text-2xl font-bold mb-4 text-center drop-shadow-md">
             Pokédex v1.0
           </div>
@@ -80,10 +80,10 @@ export default function Pokedex() {
           )}
         </div>
 
-        {/* Right panel (screen) */}
-        <div className="bg-gray-900 flex-1 border-t-8 md:border-t-0 md:border-l-8 border-red-900 relative">
+        {/* Right */}
+        <div className="bg-gray-900 flex-1 border-l-8 border-red-900 relative">
           <div className="absolute inset-0 border-4 border-gray-700 rounded-lg m-6">
-            <div className="bg-gray-950/90 h-full w-full rounded-md p-6 text-green-400 font-mono overflow-y-auto">
+            <div className="bg-gray-950/90 h-full w-full rounded-md p-6 text-green-400 font-mono">
               <AnimatePresence>
                 {!booted ? (
                   <motion.div
