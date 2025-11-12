@@ -46,7 +46,7 @@ export default function Pokedex() {
       </div>
 
       {/* Pokédex body */}
-      <div className="bg-red-700 border-8 border-red-900 rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden w-full max-w-4xl mx-auto">
+      <div className="bg-red-700 border-8 border-red-900 rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden w-full max-w-4xl mx-auto mt-15">
         {/* Left side */}
         <div className="bg-red-800 flex-1 p-6 relative flex flex-col justify-center border-b-8 md:border-b-0 md:border-r-8 border-red-900 min-h-[280px] h-auto">
           <div className="text-white text-2xl font-bold mb-4 text-center drop-shadow-md">
