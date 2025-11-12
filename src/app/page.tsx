@@ -40,15 +40,15 @@ export default function Pokedex() {
           animate={{ opacity: [1, 0.3, 1] }}
           transition={{ repeat: Infinity, duration: 1 }}
           className="w-10 h-10 bg-blue-400 rounded-full border-4 border-white shadow-[0_0_20px_5px_rgba(96,165,250,0.7)]"
-        ></motion.div>
-        <div className="w-5 h-5 bg-yellow-300 rounded-full border-2 border-white shadow-inner"></div>
-        <div className="w-5 h-5 bg-green-400 rounded-full border-2 border-white shadow-inner"></div>
+        />
+        <div className="w-5 h-5 bg-yellow-300 rounded-full border-2 border-white shadow-inner" />
+        <div className="w-5 h-5 bg-green-400 rounded-full border-2 border-white shadow-inner" />
       </div>
 
       {/* Pokédex body */}
-      <div className="bg-red-700 border-8 border-red-900 rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden max-w-5xl w-full">
-        {/* Left */}
-        <div className="bg-red-800 flex-1 p-6 relative flex flex-col justify-center border-r-8 border-red-900">
+      <div className="bg-red-700 border-8 border-red-900 rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden w-full max-w-4xl mx-auto">
+        {/* Left side */}
+        <div className="bg-red-800 flex-1 p-6 relative flex flex-col justify-center border-b-8 md:border-b-0 md:border-r-8 border-red-900 min-h-[280px] h-auto">
           <div className="text-white text-2xl font-bold mb-4 text-center drop-shadow-md">
             Pokédex v1.0
           </div>
@@ -69,7 +69,6 @@ export default function Pokedex() {
                 placeholder="Enter Pokémon name..."
                 className="bg-gray-100 text-gray-800 font-mono px-4 py-2 rounded-lg w-56 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
-
               <button
                 onClick={handleAsk}
                 className="bg-green-400 hover:bg-green-300 text-black font-bold px-5 py-2 rounded-lg shadow-lg transition active:scale-95"
@@ -80,57 +79,55 @@ export default function Pokedex() {
           )}
         </div>
 
-        {/* Right */}
-        <div className="bg-gray-900 flex-1 border-l-8 border-red-900 relative">
-          <div className="absolute inset-0 border-4 border-gray-700 rounded-lg m-6">
-            <div className="bg-gray-950/90 h-full w-full rounded-md p-6 text-green-400 font-mono">
-              <AnimatePresence>
-                {!booted ? (
-                  <motion.div
-                    key="boot"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="flex items-center justify-center h-full text-xl"
-                  >
-                    <span className="text-green-600">SYSTEM OFFLINE</span>
-                  </motion.div>
-                ) : loading ? (
-                  <motion.div
-                    key="loading"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="flex flex-col items-center justify-center h-full gap-2"
-                  >
-                    <div className="animate-pulse text-lg">Accessing data...</div>
-                    <div className="flex gap-1">
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-bounce"></div>
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-bounce [animation-delay:0.2s]"></div>
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-bounce [animation-delay:0.4s]"></div>
-                    </div>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="response"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="whitespace-pre-wrap leading-relaxed text-green-300"
-                  >
-                    {response || "Awaiting input..."}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+        {/* Right side */}
+        <div className="bg-gray-900 flex-1 border-t-8 md:border-t-0 md:border-l-8 border-red-900 p-6 flex items-center justify-center h-auto">
+          <div className="w-full border-4 border-gray-700 rounded-lg p-6 bg-gray-950/90 text-green-400 font-mono min-h-[250px]">
+            <AnimatePresence>
+              {!booted ? (
+                <motion.div
+                  key="boot"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="flex items-center justify-center h-full text-xl"
+                >
+                  <span className="text-green-600">SYSTEM OFFLINE</span>
+                </motion.div>
+              ) : loading ? (
+                <motion.div
+                  key="loading"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="flex flex-col items-center justify-center h-full gap-2"
+                >
+                  <div className="animate-pulse text-lg">Accessing data...</div>
+                  <div className="flex gap-1">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-bounce" />
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-bounce [animation-delay:0.2s]" />
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-bounce [animation-delay:0.4s]" />
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="response"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="whitespace-pre-wrap leading-relaxed text-green-300"
+                >
+                  {response || "Awaiting input..."}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>
 
       {/* Bottom buttons */}
       <div className="mt-6 flex gap-4">
-        <button className="w-10 h-10 bg-blue-500 rounded-full shadow-lg border-2 border-black active:scale-95 transition"></button>
-        <button className="w-10 h-10 bg-red-500 rounded-full shadow-lg border-2 border-black active:scale-95 transition"></button>
-        <button className="w-10 h-10 bg-yellow-500 rounded-full shadow-lg border-2 border-black active:scale-95 transition"></button>
+        <button className="w-10 h-10 bg-blue-500 rounded-full shadow-lg border-2 border-black active:scale-95 transition" />
+        <button className="w-10 h-10 bg-red-500 rounded-full shadow-lg border-2 border-black active:scale-95 transition" />
+        <button className="w-10 h-10 bg-yellow-500 rounded-full shadow-lg border-2 border-black active:scale-95 transition" />
       </div>
     </div>
   );
