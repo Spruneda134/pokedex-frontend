@@ -10,7 +10,7 @@ export default function Pokedex() {
   const [booted, setBooted] = useState(false);
   
   // Ref to keep track of the current audio instance
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handleAsk = async () => {
     if (!prompt) return;
