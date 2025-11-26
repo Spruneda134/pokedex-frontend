@@ -22,15 +22,13 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+Developed a mobile-first full-stack Pokédex web app that lets users explore and interact with Pokémon data through an AI-powered interface. The frontend, hosted on Vercel and developed with Next.js, TypeScript, and Tailwind CSS, provides a responsive and dynamic Pokédex-like experience.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The backend, built with Flask, integrates OpenAI’s API to generate natural Pokémon responses and uses pandas for structured data handling from a CSV-based Pokédex dataset. Hosted on Render, the backend communicates securely with the Vercel-hosted frontend via configured CORS to handle cross-origin requests.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Note
 
-## Deploy on Vercel
+The backend is hosted on Render’s free tier, which may go into “sleep mode” when not in use. If the server has been idle, the first request may take 10–30 seconds to wake up before responding. After that, performance is normal.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Backend Github:** https://github.com/Spruneda134/pokedex-backend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
